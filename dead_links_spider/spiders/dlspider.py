@@ -9,7 +9,7 @@ class DeadLinkSpider(CrawlSpider):
     name = "dead-links-spider"
     allowed_domains = ALLOWED_DOMANS
     start_urls = START_URLS
-    handle_httpstatus_list = [404, 200]
+    handle_httpstatus_list = [404]
     rules = (Rule(LinkExtractor(), callback='parse_entity', follow=True),)
 
     def parse_entity(self, response):
